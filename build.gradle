@@ -1,0 +1,33 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.6'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'com.google.cloud.tools.jib' version '3.2.1'
+}
+
+group = 'com.thoughtworks'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+jib {
+    container {
+        mainClass = "com.thoughtworks.play.PlayApplication"
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.cloud:spring-cloud-starter-config:3.1.1'
+    implementation group: 'com.amazonaws', name: 'aws-java-sdk-ses', version: '1.12.201'
+    implementation group: 'com.amazonaws', name: 'aws-java-sdk-sts', version: '1.12.201'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
