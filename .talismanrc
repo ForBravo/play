@@ -1,0 +1,8 @@
+fileignoreconfig:
+- filename: readonly.sql
+  checksum: 78af2ff95ae74d310325b1f07f38805f7089380b5f1f90c578861b2f0bd09012
+- filename: README.md
+  checksum: 5f25be470e9b210c2857241a03962610df27ee22350e5e3e4878dd5cdab36636
+- filename: app.yaml
+  checksum: f3d3096a63769cee71290525b04718d34280fcb4f9faed99341748d20b86714f
+version: ""
